@@ -1,4 +1,5 @@
-import Head from 'next/head'
+import Head from "next/head";
+import Router from "next/router";
 
 const Home = () => (
   <div className="container">
@@ -8,42 +9,22 @@ const Home = () => (
     </Head>
 
     <main>
-      <h1 className="title">
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+      <h1 className="title">Router.push Test with Antd</h1>
 
       <p className="description">
-        Get started by editing <code>pages/index.js</code>
+        It seems that in dev mode, Router.push is not working when the page
+        contains Antd components.
       </p>
 
       <div className="grid">
-        <a href="https://nextjs.org/docs" className="card">
-          <h3>Documentation &rarr;</h3>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a href="https://nextjs.org/learn" className="card">
-          <h3>Learn &rarr;</h3>
-          <p>Learn about Next.js in an interactive course with quizzes!</p>
-        </a>
-
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
-          <h3>Examples &rarr;</h3>
-          <p>Discover and deploy boilerplate example Next.js projects.</p>
-        </a>
-
-        <a
-          href="https://zeit.co/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="card"
-        >
-          <h3>Deploy &rarr;</h3>
-          <p>
-            Instantly deploy your Next.js site to a public URL with ZEIT Now.
-          </p>
-        </a>
+        <button className="card failed" onClick={() => Router.push("/antd")}>
+          <h3>To Antd Page</h3>
+          <p>Click to go to a page with some Antd components</p>
+        </button>
+        <button className="card success" onClick={() => Router.push("/noantd")}>
+          <h3>To Normal Page</h3>
+          <p>Click to go to a page without any Antd component</p>
+        </button>
       </div>
     </main>
 
@@ -158,16 +139,20 @@ const Home = () => (
         transition: color 0.15s ease, border-color 0.15s ease;
       }
 
-      .card:hover,
-      .card:focus,
-      .card:active {
-        color: #0070f3;
-        border-color: #0070f3;
+      .card.success {
+        background: #52c41a;
+        color: white;
+      }
+
+      .card.failed {
+        background: #f5222d;
+        color: white;
       }
 
       .card h3 {
         margin: 0 0 1rem 0;
         font-size: 1.5rem;
+        color: white;
       }
 
       .card p {
@@ -198,6 +183,6 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
+);
 
-export default Home
+export default Home;
