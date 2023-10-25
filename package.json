@@ -16,7 +16,7 @@
     "dayjs": "^1.8.28",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
-    "next": "9.4.4",
+    "next": "13.5.0",
     "next-runtime-dotenv": "^1.2.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
